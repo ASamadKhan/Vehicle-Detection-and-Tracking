@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 [image1]: ./examples/CarVsNonCar.png
 [image2]: ./examples/HogFeatures.png
-[image3]: ./examples/sliding_windows.jpg
+[image3]: ./examples/find_cars.png
 [image4]: ./examples/sliding_window.jpg
 [image5]: ./examples/bboxes_and_heat.png
 [image6]: ./examples/labels_map.png
@@ -84,7 +84,9 @@ Feature vector length has a lenght 7284. It took 37.98 Seconds for training with
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+for this purpose #find_cars# function is used. We do not need to search the whole image for cars so ystart = 400
+ystop = 656 are selected. different values of scale are tried and scale=1.5 showed good results.  The #find_cars# function calculates the hog future for the whole image at once and then depending on the window it extracts the features for that window. We also cocatenated the spatial vector and histogram bin vector to create a test_feature_vector for the window. This test_feature_vector is inputted to the learned SVM for deciding if it contains the car or not.
+The below image is resulted after running the #find_function# on test image.
 
 ![alt text][image3]
 
