@@ -52,8 +52,26 @@ Here is an example using the `RGB` color space and HOG parameters of `orientatio
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
-
+I created vectors for different parameters and looped on them to get all combinations
+```
+color_space_vector=['RGB', 'HSV', 'LUV', 'HLS', 'YUV', 'YCrCb']
+hog_channel_vector=[0,1,2,3]
+orientation_vector=[9,11]
+pix_per_cell_vector=[8,16]
+for color_space in color_space_vector:
+    for hog_channel in hog_channel_vector:
+        for orient in orientation_vector:
+            for pix_per_cell in pix_per_cell_vector:
+```
+for parameter selection I put the fallowing parameters fixed
+```
+cell_per_block = 2 # HOG cells per block
+spatial_size = (16, 16) # Spatial binning dimensions
+hist_bins = 16    # Number of histogram bins
+spatial_feat = True # Spatial features on or off
+hist_feat = True # Histogram features on or off
+hog_feat = True # HOG features on or off
+```
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
 I trained a linear SVM using...
