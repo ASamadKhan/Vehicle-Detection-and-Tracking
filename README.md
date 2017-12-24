@@ -74,8 +74,12 @@ hog_feat = True # HOG features on or off
 ```
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVM using fallowing parameters 
+```
+11 orientations 8 pixels per cell and 2 cells per block
 
+```
+Feature vector length has a lenght 7284. It took 37.98 Seconds for training with a Test Accuracy of  0.987.
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
