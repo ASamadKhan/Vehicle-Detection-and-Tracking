@@ -41,8 +41,7 @@ Here is an example using the `RGB` color space and HOG parameters of `orientatio
 ![alt text][image2]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
-
-I created vectors for different parameters and looped on them to get all combinations
+For selection HOG parameters I searched for all possible combination of colorspaces with different channels. I also varied orientation and pixel_per_cell ad checked which combination is giving good accuracy with SVM. Below code give a glimpse of how parameters are searched. 
 ```
 color_space_vector=['RGB', 'HSV', 'LUV', 'HLS', 'YUV', 'YCrCb']
 hog_channel_vector=[0,1,2,3]
@@ -58,17 +57,20 @@ for parameter selection I put the fallowing parameters fixed
 cell_per_block = 2 # HOG cells per block
 spatial_size = (16, 16) # Spatial binning dimensions
 hist_bins = 16    # Number of histogram bins
-spatial_feat = True # Spatial features on or off
-hist_feat = True # Histogram features on or off
-hog_feat = True # HOG features on or off
 ```
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using fallowing parameters 
+I  used hog features and color features for training a linear SVM. The code is in the cell below the title 'Best SVM'  
 ```
-11 orientations 8 pixels per cell and 2 cells per block
+color_space = 'HSV'  orient = 11  
+pix_per_cell = 8 
+cell_per_block = 2 
+hog_channel = 3 
+spatial_size = (16, 16) 
+hist_bins = 16   
 
 ```
+
 Feature vector length has a lenght 7284. It took 37.98 Seconds for training with a Test Accuracy of  0.987.
 ### Sliding Window Search
 
