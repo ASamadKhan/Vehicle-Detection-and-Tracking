@@ -19,10 +19,10 @@ The goals / steps of this project are the following:
 [image2]: ./examples/HogFeatures.png
 [image3]: ./examples/find_cars.png
 [image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4 
+[image5]: ./examples/heatmap.png
+[image6]: ./examples/labels.png
+[image7]: ./examples/last.png
+[video1]: ./project_video_output.mp4 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
