@@ -71,14 +71,14 @@ hist_bins = 16
 
 ```
 
-Feature vector length has a lenght 7284. It took 37.98 Seconds for training with a Test Accuracy of  0.987.
+Feature vector length has a lenght 7284. It took 7.61 Seconds for training with a Test Accuracy of  0.987.
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-for this purpose #find_cars# function is used. We do not need to search the whole image for cars so ystart = 400
-ystop = 656 are selected. different values of scale are tried and scale=1.5 showed good results.  The #find_cars# function calculates the hog future for the whole image at once and then depending on the window it extracts the features for that window. We also cocatenated the spatial vector and histogram bin vector to create a test_feature_vector for the window. This test_feature_vector is inputted to the learned SVM for deciding if it contains the car or not.
-The below image is resulted after running the #find_function# on test image.
+for this purpose 'search' function is used. We do not need to search the whole image for cars so ystart = 400
+ystop = 656 are selected. different values of scale are tried and scale=1.5 showed good results.  The 'search' function calculates the hog future for the whole image at once and then depending on the window it extracts the features for that window. We also cocatenated the spatial vector and histogram bin vector to create a test_feature_vector for the window. This test_feature_vector is inputted to the learned SVM for deciding if it contains the car or not.
+The below image is resulted after running the 'search' on test image.
 
 ![alt text][image3]
 
