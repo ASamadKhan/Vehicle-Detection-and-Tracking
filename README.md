@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 [image1]: ./examples/CarVsNonCar.png
 [image2]: ./examples/HogFeatures.png
 [image3]: ./examples/find_cars.png
-[image4]: ./examples/sliding_window.jpg
+[image4]: ./examples/pipeline.png
 [image5]: ./examples/heatmap.png
 [image6]: ./examples/label.png
 [image7]: ./examples/last.png
